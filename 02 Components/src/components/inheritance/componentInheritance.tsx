@@ -52,7 +52,7 @@ export class ComponentInheritance extends React.Component<IComponentInheritanceP
         let results: JSX.Element[] = React.Children.map(this.props.children, (child: React.ReactElement<any>, index: number): JSX.Element => {
             // let result: boolean = ComponentBase.isPrototypeOf(child.type);
             let isComponent: boolean = typeof child.type !== 'string' && React.Component.prototype.isPrototypeOf((child.type as any).prototype);
-            let result: boolean = isComponent ? (child.type as any).prototype instanceof React.Component : false; // Not a component, then never a ComponentBase
+            let result: boolean = isComponent ? (child.type as any).prototype instanceof ComponentBase : false; // Not a component, then never a ComponentBase
             return <li>
                     <div>Child nr. {index} is a React component: {isComponent ? "True" : "False"}</div>
                     <div>And is a sub class of ComponentBase: {result ? "True" : "False"} { result !== this.props.expectedTestResult ? "(unexpected)" : ""}</div>
