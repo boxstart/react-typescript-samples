@@ -1,6 +1,17 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
+const enum LogLevel {
+    TRACE,
+    DEBUG,
+    INFO,
+    WARN,
+    ERROR,
+    SILENT
+}
+
+let testVariable: LogLevel = LogLevel.DEBUG;
+
 ReactDOM.render(
     <div className="container-fluid">
         <div className="row about-page top-buffer">
@@ -16,6 +27,21 @@ ReactDOM.render(
                 <h3>
                     <small>
                         We add on top of that sample a simple react render.
+                    </small>
+                </h3>
+            </div>
+          </div>
+
+          <div className="col-xs-12">
+            <h1>
+              <small>
+                Const enum test with TypeScript 2.0.2
+              </small>
+            </h1>
+            <div className="col-xs-12">
+                <h3>
+                    <small>
+                        Debug value: { testVariable }
                     </small>
                 </h3>
             </div>

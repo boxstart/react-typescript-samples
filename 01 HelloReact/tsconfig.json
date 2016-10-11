@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es6",
         "module": "commonjs",
         "declaration": false,
         "noImplicitAny": false,
@@ -10,7 +10,7 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "noLib": false,
-        "preserveConstEnums": true,
+        "preserveConstEnums": false,
         "suppressImplicitAnyIndexErrors": true
     },
     "compileOnSave": false,
