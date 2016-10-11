@@ -10,6 +10,7 @@ class ComponentBase<P, S> extends React.Component<P, S> {
 
 interface IComponentBaseSubProps {
     name: string;
+    otherPerson?: string;
 }
 
 /**
@@ -20,15 +21,20 @@ interface IComponentBaseSubProps {
  * @extends {ComponentBase<IComponentBaseSubProps, {}>}
  */
 export class ComponentBaseSub extends ComponentBase<IComponentBaseSubProps, {}> {
+    public static defaultProps: IComponentBaseSubProps = {
+        otherPerson: "Simon",
+        name: "Johnny"
+    };
+
     constructor(props: IComponentBaseSubProps) {
         super(props);
     }
 
     public render(): JSX.Element {
-
+        const person: string = this.props.otherPerson;
         return(
             <div>
-                <h1><small>Message by ComponentBaseSub: Hello {this.props.name}</small></h1>
+                <h1><small>Message by ComponentBaseSub: Hello {this.props.name} and {this.props.otherPerson} </small></h1>
             </div>
         );
     }
